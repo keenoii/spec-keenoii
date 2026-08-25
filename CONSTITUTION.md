@@ -791,18 +791,16 @@ Implement
 
 ---
 
-## 34. /TEST
+## 34. /TEST & TARGETED DIAGNOSTICS
 
-หลัง Implement ต้องตรวจตามความเหมาะสม:
+หลัง Implement หรือเมื่อพบปัญหา ต้องตรวจด้วย Diagnostic Tools เพื่อระบุไฟล์และบรรทัดที่เกิด Error ได้อย่างแม่นยำ (ประหยัด Token):
 
-* Unit Test
-* Integration Test
-* API Test
-* E2E Test
-* Edge Case
-* Regression
+1. **Type Check**: `npx tsc --noEmit` (ตรวจ Type Error ทันทีโดยไม่ต้อง Build)
+2. **Lint Check**: `npm run lint` หรือ `npx next lint`
+3. **Automated Tests**: Unit Test / Integration Test / E2E Test
+4. **Targeted Reading**: เมื่อทราบตำแหน่งบรรทัดที่เกิด Error ให้อ่านเฉพาะโค้ดช่วงนั้น (Slice Reading) แทนการอ่านไฟล์ทั้งหมดตั้งแต่บรรทัดแรก
 
-ห้ามบอกว่า Test ผ่าน หากยังไม่ได้ตรวจจริง
+ห้ามบอกว่า Test ผ่าน หากยังไม่ได้รันคำสั่งตรวจจริง
 
 ---
 

@@ -127,7 +127,37 @@ flowchart TD
 
 ---
 
-## 🤝 6. AI Handover Protocol
+## 🎯 6. Targeted Diagnostics & Token Optimization (การแก้บั๊กแบบประหยัด Token)
+
+> 💡 **ห้ามอ่านไฟล์ขนาดใหญ่ตั้งแต่บรรทัดแรกเพื่อหาบั๊ก!**  
+> ให้ใช้คำสั่ง Diagnostic เพื่อระบุไฟล์และบรรทัดที่เกิด Error เป๊ะๆ ก่อนเปิดอ่านเฉพาะส่วนที่เกี่ยวข้อง:
+
+### Diagnostic Commands:
+1. **TypeScript Typecheck**: `npx tsc --noEmit`  
+   *(ตรวจสอบ Type Error ทันทีโดยไม่ Build บอกชื่อไฟล์และเลขบรรทัดเป๊ะๆ)*
+2. **Linter & Syntax**: `npm run lint` หรือ `npx next lint`  
+   *(ตรวจหา Bug แฝง, Unused vars, Hook dependencies)*
+3. **Automated Tests**: `npm test` หรือ `npx vitest run`  
+   *(ตรวจ Logic ของฟังก์ชันที่ Fail)*
+
+### Workflow การแก้ Error:
+```text
+1. รัน Diagnostic Command (เช่น npx tsc --noEmit)
+   ↓
+2. ได้รับไฟล์และบรรทัดที่เกิด Error (เช่น src/modules/auth/services/auth.service.ts:42)
+   ↓
+3. AI เปิดอ่านเฉพาะช่วงบรรทัดนั้น (Targeted Slice View เช่น บรรทัด 35 - 55)
+   ↓
+4. วิเคราะห์และค้นหาจุดเชื่อมโยง (Grep / Symbol search)
+   ↓
+5. แก้ไขโค้ดเฉพาะจุด
+   ↓
+6. รัน Diagnostic ซ้ำเพื่อยืนยันว่า Error ได้รับการแก้ไข 100%
+```
+
+---
+
+## 🤝 7. AI Handover Protocol
 
 เมื่อสลับการทำงานระหว่าง AI ต่าง Session หรือต่าง Model (เช่น Claude ↔ Antigravity):
 * **ข้อมูลทั้งหมดต้องบันทึกลงไฟล์ในโปรเจกต์** (เช่น `docs/specs/`, `docs/tickets/`, `docs/handovers/`) ไม่เก็บไว้แค่ใน Context Window หรือ Chat History
