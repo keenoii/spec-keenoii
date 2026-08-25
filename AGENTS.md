@@ -11,5 +11,6 @@ Every AI agent working in this repository MUST read and adhere strictly to:
 - **Config-Driven**: Move repeated and business variables to `src/config/` (`@/config/*`).
 - **Modular Next.js Architecture**: Structure features under `src/modules/[feature]/` (`@/modules/*`) with dedicated `components/`, `services/`, `repositories/`, `schemas/`, `types/`, and `config/`.
 - **Targeted Diagnostics & Token Conservation**: When debugging or investigating errors, AI MUST run diagnostics first (`npx tsc --noEmit`, `npm run lint`, or test runners) to pinpoint the exact file and line number. Read only the relevant slice/range of code and trace root causes rather than reading whole files from line 1.
+- **Direct Native Tooling (No Intermediate Wrapper Scripts)**: AI MUST edit files directly using targeted tools. Do NOT write unnecessary intermediate Python or shell scripts just to create or overwrite project code files (avoids double token consumption, escape bugs, and syntax corruption).
 - **UI Responsibility**: UI must only handle presentation, state, and user interactions. No direct DB queries or complex business logic in UI components.
 - **Ask Before Assume**: Differentiate confirmed facts from assumptions. Ask for clarification when requirements are ambiguous.

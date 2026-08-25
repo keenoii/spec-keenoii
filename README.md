@@ -23,7 +23,7 @@
 
 ---
 
-## 🌟 กฎทอง 9 ข้อ (The Golden Rules)
+## 🌟 กฎทอง (The Golden Rules)
 
 * 🔍 **Search Before Create** — ค้นหาของเดิมก่อนสร้างใหม่เสมอ
 * ♻️ **Reuse Before Duplicate** — นำกลับมาใช้ซ้ำก่อนสร้างซ้ำ
@@ -32,5 +32,7 @@
 * 🎯 **Single Source Before Multiple Sources** — แหล่งข้อมูลและกฎต้องมีจุดเดียว
 * 📦 **Module Before Monolith** — แยกโค้ดตามความรับผิดชอบของแต่ละ Feature (`src/modules/`)
 * ❓ **Ask Before Assume** — แยกข้อเท็จจริงออกจากข้อสันนิษฐาน ถ้าไม่แน่ใจให้ถามก่อน
+* 🎯 **Targeted Diagnostics Before Full-File Reading** — รัน `tsc --noEmit` / lint ก่อนอ่านไฟล์เพื่อประหยัด Token
+* ✍️ **Direct Native Edits Before Script Generation** — แก้ไขไฟล์ตรงๆ ห้ามสร้าง Python script มาเขียนทับโค้ด
 * 📊 **Impact Analysis Before Shared Code Changes** — วิเคราะห์ผลกระทบก่อนแก้ Shared Code เสมอ
 * 🏗️ **Architecture Before Speed** — สถาปัตยกรรมและความยั่งยืนสำคัญกว่าความเร็ว

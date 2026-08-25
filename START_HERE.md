@@ -150,10 +150,16 @@ flowchart TD
    ↓
 4. วิเคราะห์และค้นหาจุดเชื่อมโยง (Grep / Symbol search)
    ↓
-5. แก้ไขโค้ดเฉพาะจุด
+5. แก้ไขโค้ดเฉพาะจุดโดยตรง (Direct Targeted Edit)
    ↓
 6. รัน Diagnostic ซ้ำเพื่อยืนยันว่า Error ได้รับการแก้ไข 100%
 ```
+
+### 🚫 กฎการแก้ไขไฟล์ (Direct Native Tooling):
+* **ห้ามเขียน Python / Shell Scripts เพื่อมาสร้างหรือเขียนทับไฟล์โค้ด TypeScript/React**:
+  * การใช้ Script ครอบทำให้เปลือง Token 2 เท่า (Double Token Overhead)
+  * มักเกิดปัญหา String Escaping (`\"`, `\n`, JSX tags) ทำให้โค้ดพัง
+* **ให้ใช้เครื่องมือ Direct File Edit / Targeted Diff ของ IDE โดยตรง**: แก้ไขเฉพาะจุดที่เปลี่ยนเพื่อความเร็ว ความปลอดภัย และประหยัด Token สูงสุด
 
 ---
 
@@ -174,6 +180,8 @@ flowchart TD
 > 🌟 **Single Source Before Multiple Sources**  
 > 🌟 **Module Before Monolith**  
 > 🌟 **Ask Before Assume**  
+> 🌟 **Targeted Diagnostics Before Full-File Reading**  
+> 🌟 **Direct Native Edits Before Script Generation**  
 > 🌟 **Impact Analysis Before Shared Code Changes**  
 > 🌟 **Architecture Before Speed**  
 

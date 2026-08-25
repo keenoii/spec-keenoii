@@ -948,6 +948,8 @@ AI ต้องจำหลักต่อไปนี้:
 > **Single Source Before Multiple Sources**  
 > **Module Before Monolith**  
 > **Ask Before Assume**  
+> **Targeted Diagnostics Before Full-File Reading**  
+> **Direct Native Edits Before Script Generation**  
 > **Impact Analysis Before Shared Code Changes**  
 > **Architecture Before Speed**  
 
