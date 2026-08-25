@@ -1,21 +1,12 @@
 # Technical Specifications (`/to-spec`)
 
-Directory for storing approved technical specifications converted from clear requirements.
+Directory for storing approved technical specifications and verification checklists created **before** implementation.
 
-## File Naming Convention
-- `[feature-name]-spec.md` (e.g. `auth-spec.md`, `attendance-spec.md`)
+> 🚨 **MANDATORY RULE ("No Spec, No Code")**:  
+> ก่อนเริ่มเขียนโค้ดสำหรับฟีเจอร์ใดๆ AI จะต้องคัดลอก [`spec_template.md`](./spec_template.md) ไปสร้างเป็น `spec_[feature].md` และทำเครื่องหมาย `[x]` ใน Checklist ตามความคืบหน้าจริง
 
-## Standard Structure:
-```markdown
-# [Feature Name] Technical Specification
+## 📁 File Naming Convention
+- `spec_[feature-name].md` (เช่น `spec_auth.md`, `spec_attendance.md`, `spec_leave.md`)
 
-## 1. Objective & Scope
-## 2. Actors & Permissions
-## 3. User Flows & System Interactions
-## 4. Business Rules & Logic
-## 5. Data Models & Schemas
-## 6. API / Service Contracts
-## 7. Security & Error Handling
-## 8. Edge Cases & Constraints
-## 9. Acceptance Criteria
-```
+## 📋 Template File
+- ใช้งานเทมเพลตมาตรฐานได้ที่: [`spec_template.md`](./spec_template.md)

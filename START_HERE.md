@@ -105,24 +105,25 @@ flowchart TD
 
 ### คำสั่งและหน้าที่:
 * **`/grill-with-docs`**: ตรวจสอบ Requirement วิเคราะห์สิ่งที่ยังไม่ชัด/ขัดแย้ง/Edge cases *(ห้ามเขียนโค้ดในขั้นตอนนี้)*
-* **`/to-spec`**: แปลงสิ่งที่ชัดเจนแล้วเป็น Technical Specification บันทึกไว้ที่ `docs/specs/`
+* **`/to-spec`**: **(MANDATORY - "No Spec, No Code")** คัดลอก [`docs/specs/spec_template.md`](./docs/specs/spec_template.md) ไปสร้างเป็น `docs/specs/spec_[feature].md` พร้อมสร้าง **Checklist ตรวจงาน (`- [ ]`)** และ Acceptance Criteria ให้ครบถ้วนก่อนลงมือเขียนโค้ด
 * **`/to-tickets`**: แตก Spec เป็น Implementation Tickets ที่มี Acceptance Criteria ชัดเจน บันทึกไว้ที่ `docs/tickets/`
-* **`/implement`**: เริ่มเขียนโค้ดตาม Ticket โดยตรวจสอบของเดิม (DRY) และทำตาม Constitution
+* **`/implement`**: เริ่มเขียนโค้ดตาม Ticket โดยตรวจสอบของเดิม (DRY) และทำตาม Constitution พร้อมอัปเดต Checklist ใน `spec_[feature].md` เป็น `- [x]` เมื่อทำเสร็จแต่ละขั้นตอน
 * **`/test`**: ทดสอบจริง (Unit, Integration, Edge cases)
 * **`/code-review`**: ตรวจ Correctness, Security, Maintainability, Reusability, Configs
 
 ---
 
-## ⚡ 5. เช็คลิสต์ 8 ข้อ ก่อนเขียนโค้ดทุกครั้ง (Pre-Code Checklist)
+## ⚡ 5. เช็คลิสต์ 9 ข้อ ก่อนเขียนโค้ดทุกครั้ง (Pre-Code Checklist)
 
-1. [ ] **Search Before Create**: ฉันได้ค้นหาโค้ดเดิมแล้วหรือยัง? มี component/service/utility/type ที่นำมา reuse ได้หรือไม่?
-2. [ ] **Single Source of Truth**: มีการ duplicate config, menu, route, role, หรือ schema ซ้ำซ้อนหรือไม่?
-3. [ ] **Config Before Hardcode**: ค่าคงที่เหล่านี้ควรอยู่ใน `config/` หรือไม่?
-4. [ ] **UI Responsibility**: UI มีเฉพาะ logic การ render/interaction ใช่ไหม? (ไม่มี business logic ซับซ้อน หรือ database access ตรงๆ)
-5. [ ] **Business Logic in Service**: Business logic อยู่ใน Service Layer หรือไม่?
-6. [ ] **Server-side Validation & Auth**: การตรวจสอบสิทธิ์และความถูกต้องเกิดขึ้นที่ Server เป็นหลักแล้วใช่หรือไม่?
-7. [ ] **Impact Analysis**: หากแก้ไข shared module หรือ config ได้ตรวจดู consumers ทั้งหมดแล้วหรือยัง?
-8. [ ] **No Assumptions**: สิ่งที่ยังไม่ชัดเจน ได้ถามผู้ใช้หรือตรวจสอบ requirement ยืนยันแล้วหรือยัง?
+1. [ ] **No Spec, No Code**: มีไฟล์ `docs/specs/spec_[feature].md` พร้อมตาราง Checklist งานและ Acceptance Criteria แล้วหรือยัง?
+2. [ ] **Search Before Create**: ฉันได้ค้นหาโค้ดเดิมแล้วหรือยัง? มี component/service/utility/type ที่นำมา reuse ได้หรือไม่?
+3. [ ] **Single Source of Truth**: มีการ duplicate config, menu, route, role, หรือ schema ซ้ำซ้อนหรือไม่?
+4. [ ] **Config Before Hardcode**: ค่าคงที่เหล่านี้ควรอยู่ใน `src/config/` หรือไม่?
+5. [ ] **UI Responsibility**: UI มีเฉพาะ logic การ render/interaction ใช่ไหม? (ไม่มี business logic ซับซ้อน หรือ database access ตรงๆ)
+6. [ ] **Business Logic in Service**: Business logic อยู่ใน Service Layer หรือไม่?
+7. [ ] **Server-side Validation & Auth**: การตรวจสอบสิทธิ์และความถูกต้องเกิดขึ้นที่ Server เป็นหลักแล้วใช่หรือไม่?
+8. [ ] **Impact Analysis**: หากแก้ไข shared module หรือ config ได้ตรวจดู consumers ทั้งหมดแล้วหรือยัง?
+9. [ ] **No Assumptions**: สิ่งที่ยังไม่ชัดเจน ได้ถามผู้ใช้หรือตรวจสอบ requirement ยืนยันแล้วหรือยัง?
 
 ---
 
